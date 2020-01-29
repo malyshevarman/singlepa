@@ -1,0 +1,218 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+body {
+  background: #efefef;
+  font-family: Arial;
+  font-size: 13px;
+}
+
+section.band {
+  height: 70px;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+header {
+  padding: 20px 0;
+
+  .head {
+    display: flex;
+    align-items: center;
+
+    .flexcol {
+      &:nth-child(1) {
+        margin-right: 15px;
+      }
+
+      .logo {
+        display: block;
+        width: 97px;
+        height: 97px;
+        background: #e20e12;
+        box-shadow: 1px 0 3px rgba(0, 0, 0, 0.03);
+      }
+
+      &.column {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .namesite {
+          font-size: 24px;
+          color: #e3000f;
+          text-shadow: 2px 0 0 rgba(0, 0, 0, 0.06);
+        }
+
+        nav {
+          display: block;
+          background: rgb(216, 216, 216);
+          background: linear-gradient(0deg, rgba(216, 216, 216, 1) 0%, rgba(236, 236, 236, 1) 100%);
+          box-shadow: 1px 0 3px rgba(0, 0, 0, 0.35);
+          border-radius: 10px;
+
+          > ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            box-shadow: inset 0px 1px 0px #ffffff;
+            border-radius: 10px;
+
+            li {
+              flex: 1;
+              text-align: center;
+              white-space: nowrap;
+              background: url('./menu.png') 100% 50% no-repeat;
+
+              a {
+                color: #4c4c4c;
+                font-size: 13px;
+                padding: 18px 15px;
+                display: block;
+
+                &:hover, &:focus, &.router-link-exact-active {
+                  text-decoration: none;
+                  background: url('./menuh.png') 50% 100% no-repeat;
+                }
+              }
+
+              &:last-child {
+                background: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.main {
+  padding: 30px 0;
+
+  .flexlist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .itembg {
+      flex-basis: 48%;
+
+      background: url('./bgitem.png');
+      box-shadow: 1px 0 4px rgba(0, 0, 0, 0.20);
+      border: 1px solid white;
+      border-radius: 10px;
+      min-height: 370px;
+      position: relative;
+      margin-bottom: 4%;
+
+      &:nth-child(odd) {
+        margin-right: 4%;
+      }
+
+      .name {
+        color: #e3000f;
+        font-size: 24px;
+        margin: 10px 10px 10px 60px;
+        border-bottom: 1px solid #e40e13;
+        padding-bottom: 3px;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        background: url('./label.png') no-repeat;
+        width: 27px;
+        height: 59px;
+        position: absolute;
+        left: 10px;
+        top: -3px;
+      }
+    }
+  }
+
+
+  .rightcolumn {
+    .block {
+      min-height: 120px;
+      padding: 10px;
+      box-shadow: 1px 0 4px rgba(0, 0, 0, 0.20);
+      border-radius: 10px;
+      border: 1px solid white;
+      margin-bottom: 20px;
+
+      .title {
+        text-align: center;
+      }
+
+      &.banner {
+        display: flex;
+        color: white;
+        align-items: flex-end;
+        height: 210px;
+        font-size: 12px;
+
+        &.one {
+          background: url('./banner.png') 50% 50% no-repeat;
+        }
+
+        &.two {
+          background: url('./banertwo.png') 50% 50% no-repeat;
+        }
+      }
+
+
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .rightcolumn {
+    margin-top: 20px;
+  }
+
+  header {
+    .head {
+      flex-direction: column;
+      justify-content: center;
+
+      .flexcol:nth-child(1) {
+        margin-right: 0;
+      }
+
+      .flexcol.column {
+        .namesite {
+          padding: 10px 0;
+          text-align: center;
+        }
+
+        nav {
+          > ul {
+            display: flex;
+            flex-direction: column;
+
+            li {
+              background: none;
+              width: 100%;
+              a {
+                padding: 18px 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  section.main {
+    .flexlist {
+      .itembg {
+        flex-basis: 100%;
+
+        &:nth-child(odd) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
